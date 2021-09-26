@@ -1,6 +1,6 @@
 <script>
 	import Typeahead from "svelte-typeahead";
-	import Flag from '../components/Flag.svelte';
+	import Country from '../components/Country.svelte';
 	import { countriesJSON } from '../../static/data/countries.json';
 
 	const extract = (item) => item.name;
@@ -16,9 +16,10 @@
 	}
 </script>
 
-<h1 class="text-2xl">Welcome to Covid19 Track</h1>
+<h1 class="text-2xl ml-2 my-4">Welcome to Covid19 Track</h1>
 
 <Typeahead
+	class="ml-2"
 	placeholder={`Search for country name`}
 	hideLabel
 	data={countriesJSON}
@@ -28,7 +29,10 @@
 />
 
 {#if country}
-	<Flag countryCode={country.detail.original.countryCode.toLowerCase()} />
+	<Country
+		countryCode={country.detail.original.countryCode.toLowerCase()}
+		countryName={country.detail.original.name}
+	/>
 {:else }
-	<p>Nothing selected</p>
+	<p class="ml-2 mt-4">Nothing selected</p>
 {/if}

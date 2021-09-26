@@ -20,6 +20,7 @@
 
 <Typeahead
 	placeholder={`Search for country name`}
+	hideLabel
 	data={countriesJSON}
 	{extract}
 	on:select={(e) => update(e.detail)}

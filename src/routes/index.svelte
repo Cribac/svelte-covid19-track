@@ -5,7 +5,7 @@
 
 	const extract = (item) => item.name;
 
-	$: country = null;
+	let country = null;
 
 	function update(detail) {
 		country = { detail };
@@ -16,7 +16,7 @@
 	}
 </script>
 
-<h1>Welcome to Covid19 Track</h1>
+<h1 class="text-2xl">Welcome to Covid19 Track</h1>
 
 <Typeahead
 	placeholder={`Search for country name`}

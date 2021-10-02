@@ -13843,3 +13843,5 @@ export const countriesJSON = [
     ]
   }
 ];
+
+export default countriesJSON;

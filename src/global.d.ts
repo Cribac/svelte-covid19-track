@@ -1,5 +1,6 @@
 /// <reference types="@sveltejs/kit" />
 
-type CountryFlag = {
-	isoCode: string
+type CountryJson = {
+	status: number,
+	body: Record<string, unknown>
 }

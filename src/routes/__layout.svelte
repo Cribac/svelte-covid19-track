@@ -3,7 +3,7 @@
 	import Navbar from '../components/Navbar.svelte';
 </script>
 
-<main>
+<main class="bg-blue-base-dark">
 	<Navbar />
 	<slot />
 </main>

@@ -28,7 +28,7 @@
 </nav>
 
 {#if searchVisible}
-	<div transition:fade>
+	<div class="p-3" transition:fade>
 		<CountrySearch />
 	</div>
 {/if}

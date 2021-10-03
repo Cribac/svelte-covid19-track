@@ -39,10 +39,7 @@
 	};
 </script>
 
-<div>
-	<h2>{selectedCountry.name}</h2>
-	<h3>Count: {covidResult.result.count}</h3>
-
+<div class="flex flex-col p-3">
 	<Country
 		countryCode={selectedCountry.countryCode.toLowerCase()}
 		countryName={selectedCountry.name}

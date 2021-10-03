@@ -18,7 +18,7 @@
 </script>
 
 <Typeahead
-	class="ml-2"
+	class="p-3"
 	placeholder={`Search for country name`}
 	hideLabel
 	data={countriesJson}

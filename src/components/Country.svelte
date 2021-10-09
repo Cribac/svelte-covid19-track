@@ -4,7 +4,6 @@
 
 	export let countryCode;
 	export let countryName;
-
 	const now = DateTime.now().toISODate();
 </script>
 

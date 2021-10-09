@@ -23,20 +23,23 @@
 
 <script>
 	import Country from '../components/Country.svelte';
+	import Chart from 'svelte-frappe-charts';
 
 	export let covidResult;
 	export let selectedCountry;
 
-	export const covidData = () => {
-		return Object.keys(covidResult.result.result).map((k) => {
-			return {
-				date: k,
-				confirmed: covidResult.result.result[k].confirmed,
-				deaths: covidResult.result.result[k].deaths,
-				recovered: covidResult.result.result[k].recovered,
-			}
-		});
-	};
+	$: chartData = {
+		labels: buildSeries('date', covidResult),
+		datasets: [
+			{ name: 'Confirmed', values: buildSeries('confirmed', covidResult) },
+			{ name: 'Deaths', values: buildSeries('deaths', covidResult) },
+			{ name: 'Recovered', values: buildSeries('recovered', covidResult) },
+		],
+	}
+
+	function buildSeries(type, result) {
+		return result.data.map((d) => d[type]);
+	}
 </script>
 
 <div class="flex flex-col p-3">
@@ -45,12 +48,5 @@
 		countryName={selectedCountry.name}
 	/>
 
-	<ul>
-		{#each covidData() as data}
-			<li>Date: {data.date}</li>
-			<li>Confirmed: {data.confirmed}</li>
-			<li>Deaths: {data.deaths}</li>
-			<li>Recovered: {data.recovered}</li>
-		{/each}
-	</ul>
+	<Chart data={chartData} type="line" />
 </div>

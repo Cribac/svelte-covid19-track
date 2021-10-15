@@ -5,28 +5,4 @@ main {
   min-height: 100vh;
 }
 
-[data-svelte-typeahead] {
-  @apply rounded-sm;
-}
-
-[data-svelte-typeahead] form {
-  @apply rounded-sm;
-  @apply bg-blue-light-300;
-}
-
-[data-svelte-search] input.c19-typeahead {
-  @apply border-blue-light-100;
-  @apply rounded-sm;
-}
-
-[data-svelte-search] input.c19-typeahead:focus {
-  @apply outline-none;
-  @apply bg-blue-light-300;
-}
-
-ul.svelte-typeahead-list {
-  position: absolute;
-  z-index: 42;
-}
-
 @tailwind utilities;

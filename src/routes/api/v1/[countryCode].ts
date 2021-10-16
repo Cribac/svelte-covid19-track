@@ -4,7 +4,7 @@ import { DataTransformer } from '../../../utils/dataTransformer';
 const now = DateTime.now();
 const ago = now.minus({ months: 12 }).toISODate();
 
-export async function get({ params }) {
+export async function get({ params }: { params: CountryParams }):Promise<CountryJson> {
 	const { countryCode } = params;
 	const request = await fetch(`https://covidapi.info/api/v1/country/${countryCode.toUpperCase()}/timeseries/${ago}/${now.toISODate()}`);
 	const result = await request.json();

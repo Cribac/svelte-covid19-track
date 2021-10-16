@@ -22,7 +22,7 @@ module.exports = {
 				light: {
 					'100': '#90E0Ef',
 					'200': '#ADE8F4',
-					'300': '#CAF0F8',
+					'300': '#F3FDFF',
 				}
 			},
 		},

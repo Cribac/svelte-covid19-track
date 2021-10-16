@@ -29,4 +29,8 @@ ul.svelte-typeahead-list {
   z-index: 42;
 }
 
+ul.svelte-typeahead-list mark {
+  background: #0096C7;
+}
+
 @tailwind utilities;

@@ -28,24 +28,25 @@
 	export let covidResult;
 	export let selectedCountry;
 
-	const labels = buildSeries('date', covidResult);
+	const { latestData, chartData } = covidResult;
+	const labels = buildSeries('date', chartData);
 
 	$: confirmedData = {
 		labels,
 		datasets: [
-			{ name: 'Confirmed', values: buildSeries('confirmed', covidResult) },
+			{ name: 'Confirmed', values: buildSeries('confirmed', chartData) },
 		],
 	};
 
 	$: deathsData = {
 		labels,
 		datasets: [
-			{ name: 'Deaths', values: buildSeries('deaths', covidResult) },
+			{ name: 'Deaths', values: buildSeries('deaths', chartData) },
 		],
 	};
 
-	function buildSeries(type, result) {
-		return result.data.map((d) => d[type]);
+	function buildSeries(type, data) {
+		return data.map((d) => d[type]);
 	}
 </script>
 
@@ -53,6 +54,7 @@
 	<Country
 		countryCode={selectedCountry.countryCode.toLowerCase()}
 		countryName={selectedCountry.name}
+		covidData={latestData}
 	/>
 
 	<Chart data={confirmedData} type="line" />

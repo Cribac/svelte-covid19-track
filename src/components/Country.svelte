@@ -4,13 +4,18 @@
 
 	export let countryCode;
 	export let countryName;
-	const now = DateTime.now().toISODate();
+	export let covidData;
+
+	const { date, confirmed, deaths } = covidData;
+	const formattedDate = DateTime.fromISO(date).toFormat('yyyy LLL dd')
 </script>
 
 <div class="flex">
 	<Flag countryCode={countryCode} />
 	<div class="flex flex-col ml-3">
 		<div class="text-base">{countryName}</div>
-		<div class="text-base">{now}</div>
+		<div class="text-base">Latest data at: {formattedDate}</div>
+		<div class="text-base">Confirmed: {confirmed}</div>
+		<div class="text-base">Deaths: {deaths}</div>
 	</div>
 </div>

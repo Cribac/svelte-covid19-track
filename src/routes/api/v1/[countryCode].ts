@@ -12,6 +12,9 @@ export async function get({ params }: { params: CountryParams }):Promise<Country
 	const filteredByDay = DataTransformer.filterByDay(removed, '01');
 
 	return {
-		body: { data: filteredByDay },
+		body: {
+			latestData: result.result[0],
+			chartData: filteredByDay
+		},
 	};
 }

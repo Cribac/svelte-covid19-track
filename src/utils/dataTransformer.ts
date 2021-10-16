@@ -24,5 +24,15 @@ export class DataTransformer {
 		});
 		return filtered;
 	}
+
+	/**
+	 * Retrieve the most recent data.
+	 *
+	 * @param {CovidJson[]} input
+	 * @return {CovidJson}
+	 */
+	static latestRecord(input:CovidJson[]):CovidJson {
+		return input[0];
+	}
 }
 

@@ -10,10 +10,11 @@ export async function get({ params }: { params: CountryParams }):Promise<Country
 	const result = await request.json();
 	const removed = DataTransformer.removeDuplicates(result.result);
 	const filteredByDay = DataTransformer.filterByDay(removed, '01');
+	const latestData = DataTransformer.latestRecord(result.result);
 
 	return {
 		body: {
-			latestData: result.result[0],
+			latestData,
 			chartData: filteredByDay
 		},
 	};

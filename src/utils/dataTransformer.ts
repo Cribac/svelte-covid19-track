@@ -10,7 +10,7 @@ export class DataTransformer {
 	};
 
 	/**
-	 * Filter covid19 data array fo objects by a specific day.
+	 * Filter COVID-19 data array of objects by a specific day.
 	 *
 	 * @param {CovidJson[]} input
 	 * @param {string} filter

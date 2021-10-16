@@ -6,8 +6,7 @@
 	export let countryName;
 	export let covidData;
 
-	const { date, confirmed, deaths } = covidData;
-	const formattedDate = DateTime.fromISO(date).toFormat('yyyy LLL dd')
+	const formattedDate = DateTime.fromISO(covidData.date).toFormat('yyyy LLL dd')
 </script>
 
 <div class="flex">
@@ -15,7 +14,7 @@
 	<div class="flex flex-col ml-3">
 		<div class="text-base">{countryName}</div>
 		<div class="text-base">Latest data at: {formattedDate}</div>
-		<div class="text-base">Confirmed: {confirmed}</div>
-		<div class="text-base">Deaths: {deaths}</div>
+		<div class="text-base">Confirmed: {covidData.confirmed}</div>
+		<div class="text-base">Deaths: {covidData.deaths}</div>
 	</div>
 </div>

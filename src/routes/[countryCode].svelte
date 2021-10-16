@@ -28,14 +28,21 @@
 	export let covidResult;
 	export let selectedCountry;
 
-	$: chartData = {
-		labels: buildSeries('date', covidResult),
+	const labels = buildSeries('date', covidResult);
+
+	$: confirmedData = {
+		labels,
 		datasets: [
 			{ name: 'Confirmed', values: buildSeries('confirmed', covidResult) },
-			{ name: 'Deaths', values: buildSeries('deaths', covidResult) },
-			{ name: 'Recovered', values: buildSeries('recovered', covidResult) },
 		],
-	}
+	};
+
+	$: deathsData = {
+		labels,
+		datasets: [
+			{ name: 'Deaths', values: buildSeries('deaths', covidResult) },
+		],
+	};
 
 	function buildSeries(type, result) {
 		return result.data.map((d) => d[type]);
@@ -48,5 +55,6 @@
 		countryName={selectedCountry.name}
 	/>
 
-	<Chart data={chartData} type="line" />
+	<Chart data={confirmedData} type="line" />
+	<Chart data={deathsData} type="line" />
 </div>

@@ -56,6 +56,16 @@
 		covidData={covidResult.latestData}
 	/>
 
-	<Chart data={confirmedData} type="line" />
-	<Chart data={deathsData} type="line" />
+	<div class="mt-4">
+		<Chart
+			data={confirmedData}
+			title="Confirmed cases during the last year."
+			type="line"
+		/>
+		<Chart
+			data={deathsData}
+			title="Deaths during the last year."
+			type="line"
+		/>
+	</div>
 </div>

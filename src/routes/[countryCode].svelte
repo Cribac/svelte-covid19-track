@@ -23,6 +23,7 @@
 
 <script>
 	import Country from '../components/Country.svelte';
+	import DataInfo from '../components/DataInfo.svelte';
 	import Chart from 'svelte-frappe-charts';
 
 	export let covidResult;
@@ -68,4 +69,5 @@
 			type="line"
 		/>
 	</div>
+	<DataInfo />
 </div>

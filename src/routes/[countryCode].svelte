@@ -5,7 +5,7 @@
 		const { countryCode } = page.params;
 		const res = await fetch(`/api/v1/${countryCode}`);
 
-		if (res.ok) {
+		if (res.ok && res.status === 200) {
 			return {
 				props: {
 					covidResult: await res.json(),

@@ -12,9 +12,9 @@
 <div class="flex">
 	<Flag countryCode={countryCode} />
 	<div class="flex flex-col ml-3">
-		<div class="text-base">{countryName}</div>
-		<div class="text-base">Latest data at: {formattedDate}</div>
-		<div class="text-base">Confirmed: {covidData.confirmed}</div>
-		<div class="text-base">Deaths: {covidData.deaths}</div>
+		<div class="text-base text-blue-dark-100">{countryName}</div>
+		<div class="text-sm text-blue-dark-100 mt-1">Latest data at: {formattedDate}</div>
+		<div class="text-sm text-blue-dark-100 mt-1">Confirmed: {covidData.confirmed}</div>
+		<div class="text-sm text-blue-dark-100 mt-1">Deaths: {covidData.deaths}</div>
 	</div>
 </div>

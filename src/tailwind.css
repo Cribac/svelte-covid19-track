@@ -29,8 +29,12 @@ ul.svelte-typeahead-list {
   z-index: 42;
 }
 
+ul.svelte-typeahead-list li.selected {
+  @apply bg-blue-base-light;
+}
+
 ul.svelte-typeahead-list mark {
-  background: #0096C7;
+  @apply bg-blue-light-200;
 }
 
 @tailwind utilities;

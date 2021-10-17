@@ -14,3 +14,8 @@ type CovidJson = {
 	deaths: number,
 	recovered: number,
 };
+
+interface ApiResult {
+	count: number,
+	result: CovidJson[],
+}

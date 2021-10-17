@@ -1,16 +1,16 @@
 import { DateTime } from 'luxon';
 import { DataTransformer } from '../../../utils/dataTransformer';
 
-const now = DateTime.now();
-const ago = now.minus({ months: 12 }).toISODate();
+const now: DateTime = DateTime.now();
+const ago: string = now.minus({ months: 12 }).toISODate();
 
 export async function get({ params }: { params: CountryParams }):Promise<CountryJson> {
-	const { countryCode } = params;
-	const request = await fetch(`https://covidapi.info/api/v1/country/${countryCode.toUpperCase()}/timeseries/${ago}/${now.toISODate()}`);
-	const result = await request.json();
-	const removed = DataTransformer.removeDuplicates(result.result);
-	const filteredByDay = DataTransformer.filterByDay(removed, '01');
-	const latestData = DataTransformer.latestRecord(result.result);
+	const { countryCode }: CountryParams = params;
+	const request: Response = await fetch(`https://covidapi.info/api/v1/country/${countryCode.toUpperCase()}/timeseries/${ago}/${now.toISODate()}`);
+	const result: ApiResult = await request.json();
+	const removed: CovidJson[] = DataTransformer.removeDuplicates(result.result);
+	const filteredByDay: CovidJson[] = DataTransformer.filterByDay(removed, '01');
+	const latestData: CovidJson = DataTransformer.latestRecord(result.result);
 
 	return {
 		body: {

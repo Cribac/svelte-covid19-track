@@ -14,7 +14,7 @@
 	<div class="flex flex-col ml-3">
 		<div class="text-base text-blue-dark-100">{countryName}</div>
 		<div class="text-sm text-blue-dark-100 mt-1">Latest data at: {formattedDate}</div>
-		<div class="text-sm text-blue-dark-100 mt-1">Confirmed: {covidData.confirmed}</div>
+		<div class="text-sm text-blue-dark-100 mt-1">Confirmed Cases: {covidData.confirmed}</div>
 		<div class="text-sm text-blue-dark-100 mt-1">Deaths: {covidData.deaths}</div>
 	</div>
 </div>

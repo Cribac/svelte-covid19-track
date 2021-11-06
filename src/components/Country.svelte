@@ -6,7 +6,8 @@
 	export let countryName;
 	export let covidData;
 
-	const formattedDate = DateTime.fromISO(covidData.date).toFormat('yyyy LLL dd');
+	// use DateTime.fromFormat here since the api provides a unusual date format.
+	const formattedDate = DateTime.fromFormat(covidData.date, 'yyyy-MM-d').toFormat('yyyy LLL dd');
 </script>
 
 <div class="flex">

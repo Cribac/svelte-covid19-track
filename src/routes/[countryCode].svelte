@@ -73,17 +73,21 @@
 		covidData={latestData}
 	/>
 
-	<div class="mt-4">
+	<div class="mt-8">
 		<Chart
 			data={confirmedData}
 			title="Confirmed cases during the last year."
 			type="line"
 		/>
+	</div>
+	<div class="mt-8">
 		<Chart
 			data={deathsData}
 			title="Deaths during the last year."
 			type="line"
 		/>
 	</div>
-	<DataInfo />
+	<div class="mt-8">
+		<DataInfo />
+	</div>
 </div>

@@ -12,11 +12,11 @@
 		if (res.ok && res.status === 200) {
 			const covidData = await res.json();
 			const countryCovidData = covidData.result[selectedCountry.name];
-			const filteredByDay = DataTransformer.filterByDay(countryCovidData, '-1');
-			const filteredByYear = DataTransformer.filterByYear(filteredByDay, '2021');
-			const latestData = DataTransformer.latestRecord(filteredByYear);
-
 			if (countryCovidData) {
+				const filteredByDay = DataTransformer.filterByDay(countryCovidData, '-1');
+				const filteredByYear = DataTransformer.filterByYear(filteredByDay, '2021');
+				const latestData = DataTransformer.latestRecord(filteredByYear);
+
 				return {
 					props: {
 						covidResult: filteredByYear,

@@ -26,7 +26,12 @@
 </script>
 
 <div class="p-3">
-	<div>
-		Sorry, something went wrong: {getError(status)}
+	<div class="flex flex-col items-center bg-blue-dark-300 p-3">
+		<div class="text-xl md:text-2xl text-blue-light-300">
+			Sorry, something went wrong!
+		</div>
+		<div class="text-xl md:text-2xl text-blue-light-300">
+			{getError(status)}
+		</div>
 	</div>
 </div>

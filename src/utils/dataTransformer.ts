@@ -1,7 +1,6 @@
 /**
  * Class to handle, manipulate and transform the raw COVID-19 data retrieved by the queries.
  */
-import { debug } from 'svelte/internal';
 
 export class DataTransformer {
 	/**
@@ -21,6 +20,22 @@ export class DataTransformer {
 		const filtered = [];
 		input.forEach((i) => {
 			if (i.date.endsWith(filter)) {
+				filtered.push(i);
+			}
+		});
+		return filtered;
+	}
+
+	/**
+	 * Filter COVID-19 data array of objects by year.
+	 *
+	 * @param {CovidJson[]} input
+	 * @param {string} filter
+	 */
+	static filterByYear = function(input:CovidJson[], filter:string):CovidJson[] | [] {
+		const filtered = [];
+		input.forEach((i) => {
+			if (i.date.startsWith(filter)) {
 				filtered.push(i);
 			}
 		});

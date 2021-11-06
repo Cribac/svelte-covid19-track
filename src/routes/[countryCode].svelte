@@ -1,21 +1,35 @@
 <script context="module">
+	import { DataTransformer } from '/src/utils/dataTransformer';
 	import countriesJson from '/static/data/countries.json';
 
 	export async function load({ fetch, page }) {
 		const { countryCode } = page.params;
-		const res = await fetch(`/api/v1/${countryCode}`);
+		const selectedCountry = await countriesJson.find(c => c.countryCodeAlpha3.toLowerCase() === countryCode);
+		const res = await fetch('/api/v1/covidData');
+
+		let errorStatus = null;
 
 		if (res.ok && res.status === 200) {
-			return {
-				props: {
-					covidResult: await res.json(),
-					selectedCountry: await countriesJson.find(c => c.countryCodeAlpha3.toLowerCase() === countryCode),
-				}
-			};
+			const covidData = await res.json();
+			const countryCovidData = covidData.result[selectedCountry.name];
+			const filtered = DataTransformer.filterByDay(countryCovidData, '-1');
+			const latestData = DataTransformer.latestRecord(filtered);
+
+			if (countryCovidData) {
+				return {
+					props: {
+						covidResult: filtered,
+						latestData,
+						selectedCountry,
+					}
+				};
+			} else {
+				errorStatus = 404
+			}
 		}
 
 		return {
-			status: res.status,
+			status: errorStatus || res.status,
 			error: new Error(),
 		};
 	}
@@ -28,20 +42,21 @@
 
 	export let covidResult;
 	export let selectedCountry;
+	export let latestData;
 
-	const labels = buildSeries('date', covidResult.chartData);
+	const labels = buildSeries('date', covidResult);
 
 	$: confirmedData = {
 		labels,
 		datasets: [
-			{ name: 'Confirmed', values: buildSeries('confirmed', covidResult.chartData) },
+			{ name: 'Confirmed', values: buildSeries('confirmed', covidResult) },
 		],
 	};
 
 	$: deathsData = {
 		labels,
 		datasets: [
-			{ name: 'Deaths', values: buildSeries('deaths', covidResult.chartData) },
+			{ name: 'Deaths', values: buildSeries('deaths', covidResult) },
 		],
 	};
 
@@ -54,7 +69,7 @@
 	<Country
 		countryCode={selectedCountry.countryCode.toLowerCase()}
 		countryName={selectedCountry.name}
-		covidData={covidResult.latestData}
+		covidData={latestData}
 	/>
 
 	<div class="mt-4">

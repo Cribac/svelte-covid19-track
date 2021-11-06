@@ -4,7 +4,7 @@ type CountryParams = {
 	countryCode: string
 };
 
-type CountryJson = {
+type CovidApiJson = {
 	status:number,
 	body: Record<string, unknown>
 };

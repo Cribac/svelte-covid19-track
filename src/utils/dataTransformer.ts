@@ -1,6 +1,8 @@
 /**
  * Class to handle, manipulate and transform the raw COVID-19 data retrieved by the queries.
  */
+import { debug } from 'svelte/internal';
+
 export class DataTransformer {
 	/**
 	 * Remove duplicates from an array of objects.
@@ -32,7 +34,7 @@ export class DataTransformer {
 	 * @return {CovidJson}
 	 */
 	static latestRecord(input:CovidJson[]):CovidJson {
-		return input[0];
+		return input[input.length - 1];
 	}
 }
 

@@ -34,7 +34,7 @@ ul.svelte-typeahead-list li.selected {
 }
 
 ul.svelte-typeahead-list mark {
-  @apply bg-blue-light-200;
+  background: none;
 }
 
 @tailwind utilities;

@@ -1,5 +1,3 @@
-// https://gist.github.com/manishtiwari25/0fa055ee14f29ee6a7654d50af20f095
-
 export const countriesJSON = [
   {
     "name": "Andorra",

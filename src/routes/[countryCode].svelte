@@ -38,7 +38,6 @@
 
 <script>
 	import Country from '../components/Country.svelte';
-	import DataInfo from '../components/DataInfo.svelte';
 	import Chart from 'svelte-frappe-charts';
 
 	export let covidResult;
@@ -86,8 +85,5 @@
 			title="Deaths during the last year."
 			type="line"
 		/>
-	</div>
-	<div class="mt-8">
-		<DataInfo />
 	</div>
 </div>

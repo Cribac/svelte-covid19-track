@@ -1,6 +1,6 @@
 {
   "name": "svelte-covid19-track",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": {
     "type": "git",
     "url": "git://github.com/Cribac/svelte-covid19-track.git"
@@ -16,7 +16,7 @@
     "format": "prettier --write --plugin-search-dir=. ."
   },
   "devDependencies": {
-    "@sveltejs/kit": "^1.0.0-next.194",
+    "@sveltejs/kit": "^1.0.0-next.196",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "autoprefixer": "^10.4.0",
@@ -38,7 +38,7 @@
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "frappe-charts": "^1.6.2",
-    "luxon": "^2.0.2",
+    "luxon": "^2.1.1",
     "svelte-fa": "^2.3.3",
     "svelte-frappe-charts": "^1.9.1"
   }

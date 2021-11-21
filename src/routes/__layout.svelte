@@ -4,12 +4,12 @@
 	import DataInfo from '../components/DataInfo.svelte';
 </script>
 
-<main class="flex flex-col justify-between bg-blue-light-300">
-	<header>
-		<Navbar />
-	</header>
+<header class="flex-initial">
+	<Navbar />
+</header>
+<main class="flex-1 flex-grow">
 	<slot />
-	<footer class="flex h-12 items-center p-3 border-t border-blue-light-100">
-		<DataInfo />
-	</footer>
 </main>
+<footer class="flex flex-grow-0 h-12 items-center p-3 border-t border-blue-light-100">
+	<DataInfo />
+</footer>

@@ -65,6 +65,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Svelte COVID-19 Track | {selectedCountry.name}</title>
+</svelte:head>
+
 <div class="flex flex-col p-3">
 	<Country
 		countryCode={selectedCountry.countryCode.toLowerCase()}

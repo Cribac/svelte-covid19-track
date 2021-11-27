@@ -25,6 +25,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Svelte COVID-19 Track | Error</title>
+</svelte:head>
+
 <div class="p-3">
 	<div class="flex flex-col items-center bg-blue-dark-300 p-3">
 		<div class="text-xl md:text-2xl text-blue-light-300">

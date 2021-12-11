@@ -5,7 +5,6 @@ module.exports = {
 	theme: {
 		colors: {
 			white: colors.white,
-			gray: colors.warmGray,
 			'svelte-prime': '#ff5030',
 			blue: {
 				dark: {

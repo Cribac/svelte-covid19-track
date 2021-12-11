@@ -1,6 +1,6 @@
 {
   "name": "svelte-covid19-track",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "repository": {
     "type": "git",
     "url": "git://github.com/Cribac/svelte-covid19-track.git"

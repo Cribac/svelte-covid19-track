@@ -5,7 +5,8 @@ svelte-covid19-track is a small web application to graphically display the devel
 Confirmed cases during the last year and deaths during the last are displayed per month in separate line charts.
 
 #### Requirements:
- - [NodeJs](https://nodejs.org/en/) >= v.14
+- A modern web browser
+- [NodeJs](https://nodejs.org/en/) >= v.14 with npm
 
 #### Usage:
 ```

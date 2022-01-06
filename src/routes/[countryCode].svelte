@@ -2,8 +2,8 @@
 	import { DataTransformer } from '/src/utils/dataTransformer';
 	import countriesJson from '/static/data/countries.json';
 
-	export async function load({ fetch, page }) {
-		const { countryCode } = page.params;
+	export async function load({ fetch, params }) {
+		const { countryCode } = params;
 		const selectedCountry = await countriesJson.find(c => c.countryCodeAlpha3.toLowerCase() === countryCode);
 		const res = await fetch('/api/v1/covidData');
 

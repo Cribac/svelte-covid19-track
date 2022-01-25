@@ -69,8 +69,6 @@
 		],
 	};
 
-	console.log(buildSeries('deaths', covidResult));
-
 	/**
 	 * @param {string} type
 	 * @param {CovidJson[]} data

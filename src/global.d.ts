@@ -1,7 +1,7 @@
 /// <reference types="@sveltejs/kit" />
 
 type CountryParams = {
-	countryCode: string
+	countryCode: string,
 };
 
 type CovidApiJson = {
@@ -19,4 +19,14 @@ type CovidJson = {
 interface ApiResult {
 	count: number,
 	result: CovidJson[],
+}
+
+type ChartDataSet = {
+	name: string,
+	values: number[],
+}
+
+interface ChartData {
+	labels: string[],
+	datasets: ChartDataSet[],
 }

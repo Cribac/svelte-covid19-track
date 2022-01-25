@@ -44,8 +44,14 @@
 	export let selectedCountry;
 	export let latestData;
 
+	/**
+	 * @type string[]
+	 */
 	const labels = buildSeries('date', covidResult);
 
+	/**
+	 * @type ChartData
+	 */
 	$: confirmedData = {
 		labels,
 		datasets: [
@@ -53,6 +59,9 @@
 		],
 	};
 
+	/**
+	 * @type ChartData
+	 */
 	$: deathsData = {
 		labels,
 		datasets: [
@@ -60,6 +69,13 @@
 		],
 	};
 
+	console.log(buildSeries('deaths', covidResult));
+
+	/**
+	 * @param {string} type
+	 * @param {CovidJson[]} data
+	 * @returns {string[] || number[]}
+	 */
 	function buildSeries(type, data) {
 		return data.map((d) => d[type]);
 	}

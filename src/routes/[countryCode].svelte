@@ -14,7 +14,7 @@
 			const countryCovidData = covidData.result[selectedCountry.name];
 			if (countryCovidData) {
 				const filteredByDay = DataTransformer.filterByDay(countryCovidData, '-1');
-				const filteredByYear = DataTransformer.filterByYear(filteredByDay, '2021');
+				const filteredByYear = DataTransformer.filterByYear(filteredByDay, '2022');
 				const latestData = DataTransformer.latestRecord(filteredByYear);
 
 				return {

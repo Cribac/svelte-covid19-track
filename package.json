@@ -47,7 +47,7 @@
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.0.0",
     "frappe-charts": "^1.6.2",
-    "luxon": "^2.1.1",
+    "luxon": "^2.3.2",
     "svelte-fa": "^2.3.3",
     "svelte-frappe-charts": "^1.9.1"
   }

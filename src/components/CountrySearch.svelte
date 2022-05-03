@@ -1,7 +1,7 @@
 <script>
 	import { goto } from '$app/navigation';
 	import Typeahead from "svelte-typeahead";
-	import countriesJson from '/static/data/countries.json';
+	import countriesJson from '/src/data/countries.json';
 
 	const extract = (item) => item.name;
 

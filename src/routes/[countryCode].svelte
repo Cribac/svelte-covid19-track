@@ -1,6 +1,6 @@
 <script context="module">
 	import { DataTransformer } from '/src/utils/dataTransformer';
-	import countriesJson from '/static/data/countries.json';
+	import countriesJson from '/src/data/countries.json';
 
 	export async function load({ fetch, params }) {
 		const { countryCode } = params;

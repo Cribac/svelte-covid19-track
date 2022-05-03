@@ -19,7 +19,7 @@
     "test:coverage": "jest --coverage"
   },
   "devDependencies": {
-    "@sveltejs/kit": "^1.0.0-next.320",
+    "@sveltejs/kit": "^1.0.0-next.324",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/svelte": "^3.1.1",
     "@types/jest": "^27.0.3",
@@ -49,6 +49,6 @@
     "frappe-charts": "^1.6.2",
     "luxon": "^2.3.2",
     "svelte-fa": "^2.3.3",
-    "svelte-frappe-charts": "^1.9.1"
+    "svelte-frappe-charts": "^1.9.2"
   }
 }

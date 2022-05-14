@@ -2,6 +2,9 @@
 	import { DataTransformer } from '/src/utils/dataTransformer';
 	import countriesJson from '/src/data/countries.json';
 
+	// @TODO: Make dynamic/selectable
+	const YEAR = '2022';
+
 	export async function load({ fetch, params }) {
 		const { countryCode } = params;
 		const selectedCountry = await countriesJson.find(c => c.countryCodeAlpha3.toLowerCase() === countryCode);
@@ -14,7 +17,7 @@
 			const countryCovidData = covidData.result[selectedCountry.name];
 			if (countryCovidData) {
 				const filteredByDay = DataTransformer.filterByDay(countryCovidData, '-1');
-				const filteredByYear = DataTransformer.filterByYear(filteredByDay, '2022');
+				const filteredByYear = DataTransformer.filterByYear(filteredByDay, YEAR);
 				const latestData = DataTransformer.latestRecord(filteredByYear);
 
 				return {
@@ -77,6 +80,9 @@
 	function buildSeries(type, data) {
 		return data.map((d) => d[type]);
 	}
+
+	const confirmedTitle = `Confirmed cases during ${YEAR}.`;
+	const deathsTitle = `Confirmed deaths during ${YEAR}.`;
 </script>
 
 <svelte:head>
@@ -93,14 +99,14 @@
 	<div class="mt-8">
 		<Chart
 			data={confirmedData}
-			title="Confirmed cases during the last year."
+			title={confirmedTitle}
 			type="line"
 		/>
 	</div>
 	<div class="mt-8">
 		<Chart
 			data={deathsData}
-			title="Deaths during the last year."
+			title={deathsTitle}
 			type="line"
 		/>
 	</div>

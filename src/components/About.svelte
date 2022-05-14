@@ -3,7 +3,7 @@
 	for different countries.
 </div>
 <div class="mt-3">
-	Confirmed cases during the last year and deaths during the last are displayed per month in separate line charts.
+	Confirmed cases per year and deaths per year are displayed monthly in separate line charts.
 </div>
 <div class="mt-3">
 	Click above to search for a country.

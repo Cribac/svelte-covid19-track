@@ -7,6 +7,9 @@ main {
 
 [data-svelte-typeahead] {
   @apply rounded-sm;
+  @apply flex-grow;
+  @apply mr-4;
+  @apply mb-4;
 }
 
 [data-svelte-typeahead] form {

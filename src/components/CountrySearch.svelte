@@ -16,13 +16,19 @@
 		currentYear = year;
 	}
 
-	function clear() {
+	function clearCountry() {
 		country = null;
 	}
 
-	async function update(detail) {
-		country = { detail };
-		await goto(`/${detail.original.countryCodeAlpha3.toLowerCase()}/?year=${currentYear}`);
+	function updateCountry(detail) {
+		country = detail;
+	}
+
+	async function transitionToCountry() {
+		if (country) {
+			console.log(country);
+			await goto(`/${country.original.countryCodeAlpha3.toLowerCase()}/?year=${currentYear}`);
+		}
 	}
 </script>
 
@@ -33,8 +39,8 @@
 		hideLabel
 		data={countriesJson}
 		{extract}
-		on:select={(e) => update(e.detail)}
-		on:clear={() => clear() }
+		on:select={(e) => updateCountry(e.detail)}
+		on:clear={() => clearCountry() }
 	/>
 
 	<select bind:value={currentYear} on:change="{() => setCurrentYear(currentYear)}">
@@ -44,4 +50,8 @@
 			</option>
 		{/each}
 	</select>
+
+	<button class="c19-button" on:click="{() => transitionToCountry()}">
+		Go
+	</button>
 </div>

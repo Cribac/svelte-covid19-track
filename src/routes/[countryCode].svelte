@@ -2,11 +2,11 @@
 	import { DataTransformer } from '/src/utils/dataTransformer';
 	import countriesJson from '/src/data/countries.json';
 
-	// @TODO: Make dynamic/selectable
 	const YEAR = '2022';
 
-	export async function load({ fetch, params }) {
+	export async function load({ fetch, params, url }) {
 		const { countryCode } = params;
+		const year = url.searchParams.get('year') || YEAR;
 		const selectedCountry = await countriesJson.find(c => c.countryCodeAlpha3.toLowerCase() === countryCode);
 		const res = await fetch('/api/v1/covidData');
 
@@ -17,7 +17,7 @@
 			const countryCovidData = covidData.result[selectedCountry.name];
 			if (countryCovidData) {
 				const filteredByDay = DataTransformer.filterByDay(countryCovidData, '-1');
-				const filteredByYear = DataTransformer.filterByYear(filteredByDay, YEAR);
+				const filteredByYear = DataTransformer.filterByYear(filteredByDay, year);
 				const latestData = DataTransformer.latestRecord(filteredByYear);
 
 				return {

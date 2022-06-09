@@ -17,13 +17,7 @@ export class DataTransformer {
 	 * @param {string} filter
 	 */
 	static filterByDay = function(input:CovidJson[], filter:string):CovidJson[] | [] {
-		const filtered = [];
-		input.forEach((i) => {
-			if (i.date.endsWith(filter)) {
-				filtered.push(i);
-			}
-		});
-		return filtered;
+		return input.flatMap((i) => i.date.endsWith(filter) ? i : [] );
 	}
 
 	/**
@@ -33,13 +27,7 @@ export class DataTransformer {
 	 * @param {string} filter
 	 */
 	static filterByYear = function(input:CovidJson[], filter:string):CovidJson[] | [] {
-		const filtered = [];
-		input.forEach((i) => {
-			if (i.date.startsWith(filter)) {
-				filtered.push(i);
-			}
-		});
-		return filtered;
+		return input.flatMap((i) => i.date.startsWith(filter) ? i : [] );
 	}
 
 	/**

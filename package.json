@@ -45,7 +45,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@fortawesome/free-solid-svg-icons": "^6.0.0",
+    "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "frappe-charts": "^1.6.2",
     "luxon": "^3.0.1",
     "svelte-fa": "^3.0.3",

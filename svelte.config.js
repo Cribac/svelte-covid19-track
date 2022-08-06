@@ -7,12 +7,11 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		vite: {
-			optimizeDeps: {
-				include: ["fuzzy"], // needed for typeahead fuzzy search
-			},
+		browser: {
+			hydrate: true,
+			router: true,
 		},
-	}
+	},
 };
 
 export default config;

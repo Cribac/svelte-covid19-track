@@ -1,13 +1,13 @@
 <script context="module">
 	import { DataTransformer } from '/src/utils/dataTransformer';
-	import countriesJson from '/src/data/countries.json';
+	import { CountryService } from '../utils/countryService';
 
 	// @TODO: Make dynamic/selectable
 	const YEAR = '2022';
 
 	export async function load({ fetch, params }) {
 		const { countryCode } = params;
-		const selectedCountry = await countriesJson.find(c => c.countryCodeAlpha3.toLowerCase() === countryCode);
+		const selectedCountry = await CountryService.getCountryByCode(countryCode);
 		const res = await fetch('/api/v1/covidData');
 
 		let errorStatus = null;

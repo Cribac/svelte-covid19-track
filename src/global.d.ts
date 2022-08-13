@@ -4,6 +4,15 @@ type CountryParams = {
 	countryCode: string,
 };
 
+type Country = {
+	name: string,
+	countryCode: string,
+	countryCodeAlpha3: string,
+	phone: string,
+	currency: string,
+	stateProvinces: Array<{ name: string }>,
+}
+
 type CovidApiJson = {
 	status:number,
 	body: Record<string, unknown>

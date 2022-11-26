@@ -35,3 +35,5 @@ Confirmed cases per year and deaths per year are displayed monthly in separate l
  - Icons: [Font Awesome](https://fontawesome.com/)
  - Countries Data: [@manishtiwari25/country_state.json](https://gist.github.com/manishtiwari25/0fa055ee14f29ee6a7654d50af20f095)
  - COVID-19 Api: [@pomber/covid19](https://github.com/pomber/covid19)
+
+## Discontinued and archived!
